@@ -1,0 +1,113 @@
+{
+  "message": "hello i18n !!",
+  "menu": {
+    "actions": "Actions"
+  },
+  "sidebar": {
+    "dashboard": "DashBoard",
+    "product": {
+      "new": "New Product",
+      "inbound": "InBound",
+      "sidebar": {
+        "category": "Category",
+        "info": "Product Info",
+        "ingredient": "Ingredients",
+        "price": "Price",
+        "manufacture": "Manufacture",
+        "supplier": "Supplier",
+        "description": "Description",
+        "package": "Package",
+        "importer": "Importer"
+      }
+    },
+    "tasks": "Tasks",
+    "product_info": {
+      "name": "Product Name"
+    }
+  },
+  "input": {
+    "name": "Name",
+    "email": "Email",
+    "contact": "Contact",
+    "address": "Address",
+    "select_city": "Select City",
+    "select_district": "Select district",
+    "select_ward": "Select ward",
+    "save": "Save",
+    "reset": "Reset",
+    "phone_number": "Phone Number"
+  },
+  "importer": {
+    "title": "Importer"
+  },
+  "product": {
+    "name": "Name",
+    "other_name": "Other names",
+    "quantity": "Bought quantity",
+    "sku_code": "SKU",
+    "short_description": "Short description",
+    "images": "Images",
+    "package": "Packaging",
+    "manufacturer": "Manufacturer",
+    "updated_at": "Updated at",
+    "price": "Price",
+    "unit": "Unit",
+    "new_arrival": "New",
+    "supplier_price": "Original price",
+    "tag_list": {
+      "common": "Bán chạy",
+      "invoice_exportable": "Hóa đơn nhanh",
+      "change_style": "Đổi mẫu",
+      "origin_price": "Giá gốc",
+      "promotion_code": "Mã khuyến mại",
+      "customer_added": "Khách hàng thêm",
+      "only_thuocsi": "Chỉ có tại thuocsi",
+      "hard_to_buy": "Khó mua",
+      "new_arrival": "New",
+      "flash_sale": "⚡Flash Sale⚡"
+    },
+    "local_name": "Local name",
+    "brand_name": "Brand ",
+    "uses": "Uses",
+    "direction": "Direction",
+    "do_not_use": "Do not use",
+    "drug_interactions": "Drug interactions",
+    "storage": "Storage",
+    "overdose": "Overdose",
+    "description": "Description",
+    "country_of_origin": "Country of Origin",
+    "registration_number": "Registration number",
+    "amount_per_unit": "Each dosage unit contains",
+    "supplied_by": "Supplied by",
+    "expired_at": "Expired at"
+  },
+  "ingredient": {
+    "name": "Ingredient name",
+    "amount": "Amount",
+    "unit": "Unit",
+    "all_ingredients": "All Ingredients",
+    "search_placeholder": "Enter the ingredient name you want to search",
+    "uses": "Uses",
+    "direction": "Direction",
+    "do_not_use": "Do not use",
+    "drug_interactions": "Drug interactions",
+    "storage": "Storage",
+    "overdose": "Overdose",
+    "description": "Description",
+    "pharmacodynamics": "Pharmacodynamics",
+    "pharmacokinetics": "Pharmacokinetics",
+    "products_contains": "Products that contain",
+    "no_product_contains": "No products contain this ingredient"
+  },
+  "supplier": {
+    "title": "Supplier"
+  },
+  "package": {
+    "title": "Package"
+  },
+  "productInfo": {
+    "origin": "Origin",
+    "standard": "Standard",
+    "unit": "Unit"
+  }
+}

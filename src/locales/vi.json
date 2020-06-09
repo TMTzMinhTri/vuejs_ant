@@ -1,0 +1,112 @@
+{
+  "message": "hello i18n !!",
+  "menu": {
+    "actions": "Thao tác"
+  },
+  "sidebar": {
+    "dashboard": "DashBoard",
+    "product": {
+      "new": "SP Mới",
+      "inbound": "InBound",
+      "sidebar": {
+        "category": "Nhóm thuốc",
+        "info": "Thông tin SP",
+        "ingredient": "Thành phần",
+        "price": "Giá",
+        "manufacture": "Nhà sản xuất",
+        "supplier": "Nhà cung cấp",
+        "description": "Mô tả",
+        "package": "Quy cách đóng gói",
+        "importer": "Importer"
+      }
+    },
+    "tasks": "Tác vụ",
+    "product_info": {
+      "name": "Tên SP"
+    }
+  },
+  "input": {
+    "name": "Tên",
+    "email": "Email",
+    "contact": "Liên lạc",
+    "address": "Địa chỉ",
+    "select_city": "Chọn thành phố",
+    "select_district": "Chọn quận",
+    "select_ward": "Chọn Phường",
+    "save": "Lưu",
+    "reset": "Đặt lại",
+    "phone_number": "Số điện thoại"
+  },
+  "importer": {
+    "title": "Importer"
+  },
+  "product": {
+    "name": "Tên sản phẩm",
+    "other_name": "Tên khác",
+    "quantity": "Số lượng mua",
+    "sku_code": "SKU",
+    "short_description": "Mô tả ngắn",
+    "package": "Quy trình đóng gói",
+    "images": "Hình ảnh",
+    "manufacturer": "Nhà sản xuất",
+    "updated_at": "Cập nhật ngày",
+    "price": "Giá",
+    "new_arrival": "Mới",
+    "unit": "Đơn vị",
+    "supplier_price": "Giá gốc",
+    "tag_list": {
+      "common": "Bán chạy",
+      "invoice_exportable": "Hóa đơn nhanh",
+      "change_style": "Đổi mẫu",
+      "origin_price": "Giá gốc",
+      "promotion_code": "Mã khuyến mại",
+      "customer_added": "Khách hàng thêm",
+      "only_thuocsi": "Chỉ có tại thuocsi",
+      "hard_to_buy": "Khó mua",
+      "new_arrival": "Mới",
+      "flash_sale": "⚡Flash Sale⚡"
+    },
+    "local_name": "Tên địa phương",
+    "brand_name": "Tên thương hiệu ",
+    "uses": "Chỉ định",
+    "direction": "Liều lượng - Cách dùng",
+    "do_not_use": "Chống chỉ định",
+    "drug_interactions": "Tương tác thuốc",
+    "storage": "Bảo quản",
+    "overdose": "Quá liều",
+    "description": "Thông tin chung",
+    "country_of_origin": "Nước sản xuất",
+    "registration_number": "Số đăng ký",
+    "amount_per_unit": "Mỗi đơn vị chứa",
+    "supplied_by": "Cung cấp bởi",
+    "expired_at": "Ngày hết hạn"
+  },
+  "ingredient": {
+    "name": "Tên hoạt chất",
+    "amount": "Hàm luợng",
+    "unit": "Đơn vị",
+    "all_ingredients": "Tất cả hoạt chất",
+    "uses": "Chỉ định",
+    "direction": "Liều lượng - Cách dùng",
+    "do_not_use": "Chống chỉ định",
+    "drug_interactions": "Tương tác thuốc",
+    "storage": "Bảo quản",
+    "overdose": "Quá liều",
+    "description": "Thông tin chung",
+    "pharmacodynamics": "Dược lực học",
+    "pharmacokinetics": "Dược động học",
+    "products_contains": "Danh sách các thuốc có",
+    "no_product_contains": "Chưa có thuốc dùng hoạt chất này"
+  },
+  "supplier": {
+    "title": "Nhà cung cấp"
+  },
+  "package": {
+    "title": "Package"
+  },
+  "productInfo": {
+    "origin": "Origin",
+    "standard": "Standard",
+    "unit": "Unit"
+  }
+}
