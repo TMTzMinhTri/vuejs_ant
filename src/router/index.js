@@ -13,7 +13,7 @@ const routes = [
   {
     path: '/',
     component: DashboardLayout,
-    redirect: '/admin/overview'
+    redirect: '/product/product-category'
   },
   // {
   //   path: '/admin',
