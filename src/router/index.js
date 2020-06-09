@@ -5,6 +5,7 @@ import DashboardLayout from "@/layout/DashboardLayout";
 import ProductLayout from "@/layout/ProductLayout/ProductLayout.vue";
 
 import ProductCategory from "@/views/Product/ProductCategory.vue";
+import Overview from "@/views/Admin/Overview.vue";
 import NotFound from "@/views/NotFound/index.vue";
 
 Vue.use(VueRouter)
@@ -15,34 +16,34 @@ const routes = [
     component: DashboardLayout,
     redirect: '/product/product-category'
   },
-  // {
-  //   path: '/admin',
-  //   component: DashboardLayout,
-  //   redirect: '/admin/overview',
-  //   children: [
-  //     {
-  //       path: 'overview',
-  //       name: 'Overview',
-  //       component: Overview
-  //     },
-  //     {
-  //       path: 'new-product',
-  //       name: 'NewProduct',
-  //       component: ProductLayout,
-  //       redirect: '/product/product-category'
-  //     },
-  //     {
-  //       path: 'inbound',
-  //       name: 'Inound',
-  //       component: Inbound
-  //     },
-  //     {
-  //       path: 'tasks',
-  //       name: 'Tasks',
-  //       component: Tasks
-  //     }
-  //   ]
-  // },
+  {
+    path: '/admin',
+    component: DashboardLayout,
+    redirect: '/admin/overview',
+    children: [
+      {
+        path: 'overview',
+        name: 'Overview',
+        component: Overview
+      },
+      // {
+      //   path: 'new-product',
+      //   name: 'NewProduct',
+      //   component: ProductLayout,
+      //   redirect: '/product/product-category'
+      // },
+      // {
+      //   path: 'inbound',
+      //   name: 'Inound',
+      //   component: Inbound
+      // },
+      // {
+      //   path: 'tasks',
+      //   name: 'Tasks',
+      //   component: Tasks
+      // }
+    ]
+  },
   {
     path: '/product',
     component: ProductLayout,
