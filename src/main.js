@@ -7,14 +7,19 @@ import routes from './routes/routes'
 import VueRouter from 'vue-router'
 import i18n from './i18n'
 
+import VueQuillEditor from 'vue-quill-editor'
+import 'quill/dist/quill.core.css' // import styles
+import 'quill/dist/quill.snow.css' // for snow theme
+import 'quill/dist/quill.bubble.css' // for bubble theme
 
 
 Vue.config.productionTip = false;
 Vue.use(VueRouter)
 Vue.use(Antd);
+Vue.use(VueQuillEditor)
 
 const router = new VueRouter({
-  routes, // short for routes: routes
+  routes,
   linkActiveClass: 'nav-item active',
   scrollBehavior: (to) => {
     if (to.hash) {
