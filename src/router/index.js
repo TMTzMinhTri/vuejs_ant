@@ -1,7 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import { NotFound } from "@/views/NotFound/index.vue";
+// import Home from '../views/Home.vue'
+import DashboardLayout from "@/layout/DashboardLayout";
+import ProductLayout from "@/layout/ProductLayout/ProductLayout.vue";
+
+import ProductCategory from "@/views/Product/ProductCategory.vue";
+import NotFound from "@/views/NotFound/index.vue";
 
 Vue.use(VueRouter)
 
