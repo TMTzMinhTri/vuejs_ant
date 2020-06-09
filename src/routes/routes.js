@@ -21,9 +21,9 @@ import NotFound from "@/views/NotFound/index.vue";
 
 
 // Admin pages
-import Overview from '../pages/Overview.vue'
-// import Inbound from '../pages/Inbound.vue'
-// import Tasks from '../pages/Tasks.vue'
+import Overview from '../views/Admin/Overview.vue'
+import Inbound from '../views/Admin/Inbound.vue'
+import Tasks from '../views/Admin/Tasks.vue'
 
 Vue.use(VueRouter)
 
@@ -31,7 +31,8 @@ const routes = [
   {
     path: '/',
     component: DashboardLayout,
-    redirect: '/product/product-category'
+    redirect: '/admin/overview',
+
   },
   {
     path: '/admin',
@@ -49,16 +50,16 @@ const routes = [
         component: ProductLayout,
         redirect: '/product/product-category'
       },
-      // {
-      //   path: 'inbound',
-      //   name: 'Inound',
-      //   component: Inbound
-      // },
-      // {
-      //   path: 'tasks',
-      //   name: 'Tasks',
-      //   component: Tasks
-      // }
+      {
+        path: 'inbound',
+        name: 'Inound',
+        component: Inbound
+      },
+      {
+        path: 'tasks',
+        name: 'Tasks',
+        component: Tasks
+      }
     ]
   },
   {

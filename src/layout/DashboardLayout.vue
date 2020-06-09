@@ -37,7 +37,7 @@ const listDashboardMenu = [
   { name: "Dashboard", path: "/admin/overview", icon_type: "user" },
   { name: "SP mới", path: "/product/product-category", icon_type: "user" },
   { name: "Inbound", path: "/admin/inbound", icon_type: "user" },
-  { name: "Tác vụ", path: "/admin/task", icon_type: "user" }
+  { name: "Tác vụ", path: "/admin/tasks", icon_type: "user" }
 ];
 export default {
   data() {
