@@ -49,6 +49,9 @@ export default {
   methods: {
     onChange(value) {
       console.log("changed", value);
+    },
+    handleChange(value) {
+      console.log(`selected ${value}`);
     }
   }
 };
