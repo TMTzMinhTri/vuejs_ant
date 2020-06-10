@@ -26,8 +26,8 @@
           <a-breadcrumb-item>User</a-breadcrumb-item>
           <a-breadcrumb-item>Bill</a-breadcrumb-item>
         </a-breadcrumb>
-        <div :style="{ padding: '24px', background: '#fff', minHeight: '360px' }">
-          <router-view></router-view>
+        <div >
+          <router-view class="body_content"></router-view>
         </div>
       </a-layout-content>
       <a-layout-footer style="text-align: center">Ant Design ©2018 Created by Ant UED</a-layout-footer>
@@ -128,5 +128,14 @@ export default Vue.extend({
   height: 32px;
   background: rgba(255, 255, 255, 0.2);
   margin: 16px;
+}
+.body_content {
+    background: white;
+    width: 50%;
+    margin: auto;
+    height: 100%;
+    padding: 24px;
+    border-radius: 10px;
+    box-sizing: border-box;
 }
 </style>
