@@ -108,7 +108,7 @@ export default Vue.extend({
   background: transparent !important;
   height: auto !important;
   .logo-img {
-    width: 40px;
+    min-width: 40px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -148,7 +148,7 @@ export default Vue.extend({
   box-sizing: border-box;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
   .body_content {
     width: 100%;
   }

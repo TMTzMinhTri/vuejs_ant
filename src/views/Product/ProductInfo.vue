@@ -2,7 +2,7 @@
   <div>
     <a-form :form="form" @submit="handleSubmit">
       <a-row type="flex" justify="space-around" align="top">
-        <a-col :span="4">
+        <a-col :span="8">
           <h2 class="pb-3">{{ $t('product.name') }}</h2>
           <a-form-item :label="$t('product.name')">
             <a-input v-model="form.name" />
