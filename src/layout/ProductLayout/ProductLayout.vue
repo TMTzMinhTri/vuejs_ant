@@ -9,12 +9,16 @@
         </a>
       </div>
       <a-menu theme="dark" :default-selected-keys="['1']" mode="inline">
-        <a-menu-item :key="key" v-for="(menu, key) in listProductMenu" :style="{textAlign: 'left'}">
-          <router-link :to="menu.path">
-            <a-icon type="user" />
-            <span>{{menu.name}}</span>
-          </router-link>
-        </a-menu-item>
+        <router-link
+          :to="menu.path"
+          v-for="(menu, key) in listProductMenu"
+          :key="key"
+          :style="{textAlign: 'left'}"
+          class="ant-menu-item"
+        >
+          <a-icon type="user" />
+          <span>{{menu.name}}</span>
+        </router-link>
       </a-menu>
     </a-layout-sider>
     <a-layout>
@@ -26,7 +30,7 @@
           <a-breadcrumb-item>User</a-breadcrumb-item>
           <a-breadcrumb-item>Bill</a-breadcrumb-item>
         </a-breadcrumb>
-        <div >
+        <div>
           <router-view class="body_content"></router-view>
         </div>
       </a-layout-content>
@@ -80,6 +84,7 @@ export default Vue.extend({
   },
   data() {
     return {
+      tag: "router-link",
       collapsed: false,
       listProductMenu
     };
@@ -130,12 +135,12 @@ export default Vue.extend({
   margin: 16px;
 }
 .body_content {
-    background: white;
-    width: 50%;
-    margin: auto;
-    height: 100%;
-    padding: 24px;
-    border-radius: 10px;
-    box-sizing: border-box;
+  background: white;
+  width: 50%;
+  margin: auto;
+  height: 100%;
+  padding: 24px;
+  border-radius: 10px;
+  box-sizing: border-box;
 }
 </style>

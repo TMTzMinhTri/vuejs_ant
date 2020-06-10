@@ -20,7 +20,7 @@ Vue.use(VueQuillEditor)
 
 const router = new VueRouter({
   routes,
-  linkActiveClass: 'nav-item active',
+  linkActiveClass: 'ant-menu-item-selected',
   scrollBehavior: (to) => {
     if (to.hash) {
       return { selector: to.hash }
