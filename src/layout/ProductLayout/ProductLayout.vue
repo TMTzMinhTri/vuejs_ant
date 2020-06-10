@@ -35,14 +35,14 @@
         </div>
       </a-layout-content>
       <a-layout-footer style="text-align: center">
-        <SubmitForm/>
+        <SubmitForm />
       </a-layout-footer>
     </a-layout>
   </a-layout>
 </template>
 
 <script>
-import SubmitForm from '@/components/SubmitForm'
+import SubmitForm from "@/components/SubmitForm";
 import TopNavbar from "./TopNavbar";
 import Vue from "vue";
 const listProductMenu = [
@@ -146,5 +146,11 @@ export default Vue.extend({
   padding: 24px;
   border-radius: 10px;
   box-sizing: border-box;
+}
+
+@media only screen and (min-width: 600px) {
+  .body_content {
+    width: 100%;
+  }
 }
 </style>
