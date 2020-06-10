@@ -21,7 +21,7 @@
         <a-col :span="14">
           <h2 class="pb-3">{{ $t('sidebar.product.sidebar.info') }}</h2>
           <a-form-item :label="$t('productInfo.origin')">
-             <a-select default-value="nhap thanh pho" style="width: 100%" @change="handleChange">
+             <a-select default-value="" style="width: 100%" @change="handleChange">
             <a-select-option
               v-for="i in 25"
               :key="(i + 9).toString(36) + i"
@@ -29,7 +29,7 @@
           </a-select>
           </a-form-item>
           <a-form-item :label="$t('productInfo.standard')">
-            <a-select default-value="nhap thanh pho" style="width: 100%" @change="handleChange">
+            <a-select default-value="" style="width: 100%" @change="handleChange">
             <a-select-option
               v-for="i in 25"
               :key="(i + 9).toString(36) + i"
@@ -37,7 +37,7 @@
           </a-select>
           </a-form-item>
           <a-form-item :label="$t('productInfo.unit')">
-             <a-select default-value="nhap thanh pho" style="width: 100%" @change="handleChange">
+             <a-select default-value="" style="width: 100%" @change="handleChange">
             <a-select-option
               v-for="i in 25"
               :key="(i + 9).toString(36) + i"

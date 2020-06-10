@@ -48,4 +48,7 @@ export default {
 </script>
 
 <style scoped>
+  .body_content {
+    width: 100%
+  }
 </style>

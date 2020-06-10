@@ -2,7 +2,7 @@
   <div>
     <span class="title center">{{$t("sidebar.product.sidebar.category")}}</span>
     <a-form :form="form">
-      <a-select mode="tags" style="width: 100%" placeholder="Tags Mode" @change="handleChange">
+      <a-select mode="tags" style="width: 100%" placeholder="Nhap nhom thuoc" @change="handleChange">
         <a-select-option
           v-for="i in 25"
           :key="(i + 9).toString(36) + i"
