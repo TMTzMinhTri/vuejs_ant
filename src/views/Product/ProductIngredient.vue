@@ -1,7 +1,6 @@
 <template>
   <div>
     <div style="margin-bottom: 16px">
-      <a-button type="primary" :disabled="!hasSelected" :loading="loading" @click="start">Reload</a-button>
       <a-button type="danger" @click="AddNewRow">Add</a-button>
       <span style="margin-left: 8px">
         <template v-if="hasSelected">{{ `Selected ${selectedRowKeys.length} items` }}</template>
@@ -14,13 +13,30 @@
       :rowKey="(record)=> record.key"
     >
       >
-      <template slot="name" slot-scope="text, record">
-        <editable-cell :text="text" @change="onCellChange(record.key, 'name', $event)" />
+      <template v-for="col in ['name', 'amount', 'unit']" :slot="col" slot-scope="text, record">
+        <div :key="col">
+          <a-input
+            v-if="record.editable"
+            style="margin: -5px 0"
+            :value="text"
+            @change="e => handleChange(e.target.value, record.key, col)"
+          />
+          <template v-else>{{ text }}</template>
+        </div>
       </template>
       <template slot="action" slot-scope="text, record">
         <a-popconfirm v-if="data.length" title="Sure to delete?" @confirm="() => onDelete(record)">
           <a href="javascript:;">Delete</a>
         </a-popconfirm>
+        <span v-if="record.editable">
+          <a @click="() => save(record.key)">Save</a>
+          <a-popconfirm title="Sure to cancel?" @confirm="() => cancelEdit(record.key)">
+            <a>Cancel</a>
+          </a-popconfirm>
+        </span>
+        <span v-else>
+          <a :disabled="editingKey !== ''" @click="() => setEdit(record.key)">Edit</a>
+        </span>
       </template>
     </a-table>
   </div>
@@ -35,11 +51,13 @@ const columns = [
   },
   {
     title: "Hàm luợng",
-    dataIndex: "amount"
+    dataIndex: "amount",
+    scopedSlots: { customRender: "amount" }
   },
   {
     title: "Đơn vị",
-    dataIndex: "unit"
+    dataIndex: "unit",
+    scopedSlots: { customRender: "unit" }
   },
   {
     title: "Thao tác",
@@ -51,10 +69,24 @@ const columns = [
 export default {
   data() {
     return {
-      data: [],
+      data: [
+        {
+          key: 0,
+          name: "123123",
+          amount: "123",
+          unit: "123"
+        },
+        {
+          key: 1,
+          name: "123123",
+          amount: "123",
+          unit: "123"
+        }
+      ],
       columns,
-      selectedRowKeys: [], // Check here to configure the default column
-      loading: false
+      selectedRowKeys: [],
+      loading: false,
+      editingKey: ""
     };
   },
   computed: {
@@ -63,14 +95,6 @@ export default {
     }
   },
   methods: {
-    start() {
-      this.loading = true;
-      // ajax request after empty completing
-      setTimeout(() => {
-        this.loading = false;
-        this.selectedRowKeys = [];
-      }, 1000);
-    },
     onSelectChange(selectedRowKeys) {
       console.log("selectedRowKeys changed: ", selectedRowKeys);
       this.selectedRowKeys = selectedRowKeys;
@@ -89,46 +113,42 @@ export default {
       const cloneData = [...this.data];
       cloneData.splice(cloneData.indexOf(record), 1);
       this.data = cloneData;
-    }
-  }
-};
-
-const EditableCell = {
-  template: `
-      <div class="editable-cell">
-        <div v-if="editable" class="editable-cell-input-wrapper">
-          <a-input :value="value" @change="handleChange" @pressEnter="check" /><a-icon
-            type="check"
-            class="editable-cell-icon-check"
-            @click="check"
-          />
-        </div>
-        <div v-else class="editable-cell-text-wrapper">
-          {{ value || ' ' }}
-          <a-icon type="edit" class="editable-cell-icon" @click="edit" />
-        </div>
-      </div>
-    `,
-  props: {
-    text: String
-  },
-  data() {
-    return {
-      value: this.text,
-      editable: false
-    };
-  },
-  methods: {
-    handleChange(e) {
-      const value = e.target.value;
-      this.value = value;
     },
-    check() {
-      this.editable = false;
-      this.$emit("change", this.value);
+    setEdit(key) {
+      const newData = [...this.data];
+      const target = newData.filter(item => key === item.key)[0];
+      this.editingKey = key;
+      if (target) {
+        target.editable = true;
+        this.data = newData;
+      }
     },
-    edit() {
-      this.editable = true;
+    cancelEdit(key) {
+      const newData = [...this.data];
+      const target = newData.filter(item => key === item.key)[0];
+      this.editingKey = "";
+      if (target) {
+        Object.assign(target, this.data.filter(item => key === item.key)[0]);
+        delete target.editable;
+        this.data = newData;
+      }
+    },
+    handleChange(value, key, column) {
+      const newData = [...this.data];
+      const target = newData.filter(item => key === item.key)[0];
+      if (target) {
+        target[column] = value;
+        this.data = newData;
+      }
+    },
+    save(key) {
+      const newData = [...this.data];
+      const target = newData.filter(item => key === item.key)[0];
+      if (target) {
+        delete target.editable;
+        this.data = newData;
+      }
+      this.editingKey = "";
     }
   }
 };
