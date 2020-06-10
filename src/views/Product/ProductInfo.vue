@@ -47,10 +47,6 @@
 
         </a-col>
       </a-row>
-      <a-form-item class="center">
-        <a-button type="primary" @click="submitForm('infoForm')">Submit</a-button>
-        <a-button style="margin-left: 10px" @click="resetForm('infoForm')">Reset</a-button>
-      </a-form-item>
     </a-form>
   </div>
 </template>
@@ -78,7 +74,10 @@ export default {
           console.log("Received values of form: ", values);
         }
       });
-    }
+    },
+    handleChange(value) {
+      console.log('changed', value);
+    },
   }
 };
 </script>

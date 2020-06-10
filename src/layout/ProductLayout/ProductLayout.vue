@@ -34,12 +34,15 @@
           <router-view class="body_content"></router-view>
         </div>
       </a-layout-content>
-      <a-layout-footer style="text-align: center">Ant Design ©2018 Created by Ant UED</a-layout-footer>
+      <a-layout-footer style="text-align: center">
+        <SubmitForm/>
+      </a-layout-footer>
     </a-layout>
   </a-layout>
 </template>
 
 <script>
+import SubmitForm from '@/components/SubmitForm'
 import TopNavbar from "./TopNavbar";
 import Vue from "vue";
 const listProductMenu = [
@@ -80,7 +83,8 @@ const listProductMenu = [
 
 export default Vue.extend({
   components: {
-    TopNavbar
+    TopNavbar,
+    SubmitForm
   },
   data() {
     return {

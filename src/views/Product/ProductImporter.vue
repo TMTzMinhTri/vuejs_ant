@@ -40,9 +40,6 @@
         </a-col>
       </div>
 
-      <div class="ant-row ant-form-item center ">
-        <a-button type="primary" html-type="submit">Submit</a-button>
-      </div>
     </a-form>
   </div>
 </template>
