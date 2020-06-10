@@ -1,6 +1,6 @@
 <template>
-  <div class="">
-    <!-- <h1>{{$t("importer.title")}}</h1> -->
+  <div>
+    <span class="title center">{{$t("importer.title")}}</span>
 
     <a-form :form="form" @submit="handleSubmit">
       <a-form-item label="Name">
@@ -40,7 +40,7 @@
         </a-col>
       </div>
 
-      <div class="ant-row ant-form-item submit-btn ">
+      <div class="ant-row ant-form-item center ">
         <a-button type="primary" html-type="submit">Submit</a-button>
       </div>
     </a-form>
@@ -76,7 +76,7 @@ export default {
 .ant-input-number {
   width: 100%;
 }
-.submit-btn {
+.center {
   text-align: center;
 }
 </style>

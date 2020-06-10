@@ -24,4 +24,12 @@
     }
   }
 }
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.center {
+  text-align: center;
+}
 </style>

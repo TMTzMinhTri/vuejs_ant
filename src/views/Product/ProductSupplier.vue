@@ -1,66 +1,82 @@
 <template>
-  <div>ASDASD
-    <!-- <div class="form">
-      <h2 class="pb-3">{{ $t('sidebar.product.sidebar.supplier') }}</h2>
-      <div>
-        <div class="form-group">
-          <label>{{ $t('input.name') }}</label>
-          <input type="text" name :placeholder= " $t('input.name') " class="form-control" id />
-        </div>
-        <div class="form-group">
-          <label>{{ $t('input.email') }}</label>
-          <input type="text" name :placeholder= "$t('input.email')" class="form-control" id />
-        </div>
-        <div class="form-group">
-          <label>{{ $t('input.address') }}</label>
-          <input type="text" name class="form-control" :placeholder= "$t('input.address')" id />
-        </div>
-        <div class="fgroup-inline-3">
-          <div class="form-group">
-            <label for="inputState">{{ $t('input.select_city') }}</label>
-            <div class="selectdiv">
-              <select id="inputState" class="form-control">
-                <option></option>
-                <option>...</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="inputState">{{ $t('input.select_district') }}</label>
-            <div class="selectdiv">
-              <select id="inputState" class="form-control">
-                <option></option>
-                <option>...</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="inputState">{{ $t('input.select_ward') }}</label>
-            <div class="selectdiv">
-              <select id="inputState" class="form-control">
-                <option></option>
-                <option>...</option>
-              </select>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="inputState">{{ $t('sidebar.product.sidebar.category') }}</label>
-          <div class="selectdiv">
-            <select id="inputState" class="form-control">
-              <option></option>
-              <option>...</option>
-            </select>
-          </div>
-        </div>
+  <div>
+    <span class="title center">{{$t("sidebar.product.sidebar.supplier")}}</span>
+
+    <a-form :form="form" @submit="handleSubmit">
+      <a-form-item label="Name">
+        <a-input v-model="form.name"/>
+      </a-form-item>
+      <a-form-item :label="$t('input.contact')">
+        <a-input-number v-model="form.phone" onchange="{onChange}"></a-input-number>
+      </a-form-item>
+      <a-form-item :label="$t('input.address')">
+        <a-input v-model="form.address" />
+      </a-form-item>
+      <div class="ant-row ant-form-item" style="width:100%">
+        <a-col :span="8">
+          <a-select default-value="nhap thanh pho" style="width: 100%" @change="handleChange">
+            <a-select-option
+              v-for="i in 25"
+              :key="(i + 9).toString(36) + i"
+            >{{ (i + 9).toString(36) + i }}</a-select-option>
+          </a-select>
+        </a-col>
+        <a-col :span="8">
+          <a-select default-value="nhap thanh pho" style="width: 100%" @change="handleChange">
+            <a-select-option
+              v-for="i in 25"
+              :key="(i + 9).toString(36) + i"
+            >{{ (i + 9).toString(36) + i }}</a-select-option>
+          </a-select>
+        </a-col>
+        <a-col :span="8">
+          <a-select default-value="nhap thanh pho" style="width: 100%" @change="handleChange">
+            <a-select-option
+              v-for="i in 25"
+              :key="(i + 9).toString(36) + i"
+            >{{ (i + 9).toString(36) + i }}
+            </a-select-option>
+          </a-select>
+        </a-col>
       </div>
-    </div> -->
+
+      <div class="ant-row ant-form-item center ">
+        <a-button type="primary" html-type="submit">Submit</a-button>
+      </div>
+    </a-form>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      formLayout: "horizontal",
+      form: this.$form.createForm(this, { name: "coordinated" })
+    };
+  },
+  methods: {
+    handleSubmit(e) {
+      e.preventDefault();
+      this.form.validateFields((err, values) => {
+        if (!err) {
+          console.log("Received values of form: ", values);
+        }
+      });
+    },
+
+    handleChange(value) {
+      console.log(`selected ${value}`);
+    }
+  }
+};
 </script>
 
-<style  lang='scss'>
+<style lang="scss" scoped>
+.ant-input-number {
+  width: 100%;
+}
+.center {
+  text-align: center;
+}
 </style>
