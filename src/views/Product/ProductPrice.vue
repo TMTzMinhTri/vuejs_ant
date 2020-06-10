@@ -8,7 +8,7 @@
     >
       <a-input-number
       :default-value="0"
-      :formatter="value => `VND ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')"
+      :formatter="value => `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')"
       :parser="value => value.replace(/\$\s?|(,*)/g, '')"
       @change="onChange"
     />
