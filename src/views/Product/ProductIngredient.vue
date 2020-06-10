@@ -161,4 +161,7 @@ export default {
   .icon {
     margin: 10px;
   }
+  .body_content {
+    width: 100%
+  }
 </style>
