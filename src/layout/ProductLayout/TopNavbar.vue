@@ -5,30 +5,28 @@
         <label for="product_name">Product</label>
         <a-input placeholder="Product name" id="product_name" />
       </div>
-      <a-dropdown placement="bottomRight">
-        <a-button>Add images</a-button>
-        <a-menu slot="overlay">
-          <a-menu-item>
-            <div class="clearfix">
-              <a-upload
-                action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-                list-type="picture-card"
-                :file-list="fileList"
-                @preview="handlePreview"
-                @change="handleChange"
-              >
-                <div v-if="fileList.length < 8">
-                  <a-icon type="plus" />
-                  <div class="ant-upload-text">Upload</div>
-                </div>
-              </a-upload>
-              <a-modal :visible="previewVisible" :footer="null" @cancel="handleCancel">
-                <img alt="example" style="width: 100%" :src="previewImage" />
-              </a-modal>
-            </div>
-          </a-menu-item>
-        </a-menu>
-      </a-dropdown>
+      <div style="{position: 'relative'}">
+        <a-button @mouseenter="showDropdown">Add images</a-button>
+        <div v-click-outside="handleClickOutSide" v-if="isShowDropDown" class="dropdown_item">
+          <div class="clearfix">
+            <a-upload
+              action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+              list-type="picture-card"
+              :file-list="fileList"
+              @preview="handlePreview"
+              @change="handleChange"
+            >
+              <div v-if="fileList.length < 8">
+                <a-icon type="plus" />
+                <div class="ant-upload-text">Upload</div>
+              </div>
+            </a-upload>
+            <a-modal :visible="previewVisible" :footer="null" @cancel="handleCancel">
+              <img alt="example" style="width: 100%" :src="previewImage" />
+            </a-modal>
+          </div>
+        </div>
+      </div>
       <a-dropdown placement="bottomRight">
         <a-icon type="bell" />
         <a-menu slot="overlay">
@@ -97,7 +95,8 @@ export default {
           name: "image.png",
           status: "error"
         }
-      ]
+      ],
+      isShowDropDown: false
     };
   },
   methods: {
@@ -113,6 +112,12 @@ export default {
     },
     handleChange({ fileList }) {
       this.fileList = fileList;
+    },
+    showDropdown() {
+      this.isShowDropDown = true;
+    },
+    handleClickOutSide() {
+      this.isShowDropDown = false;
     }
   }
 };
@@ -126,5 +131,13 @@ export default {
 .ant-upload-select-picture-card .ant-upload-text {
   margin-top: 8px;
   color: #666;
+}
+.dropdown_item {
+  z-index: 2;
+  position: absolute;
+  width: 356px;
+  background: #868686;
+  padding: 10px;
+  border-radius: 10px;
 }
 </style>

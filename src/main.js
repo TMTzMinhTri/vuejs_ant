@@ -11,12 +11,16 @@ import VueQuillEditor from 'vue-quill-editor'
 import 'quill/dist/quill.core.css' // import styles
 import 'quill/dist/quill.snow.css' // for snow theme
 import 'quill/dist/quill.bubble.css' // for bubble theme
+import clickOuside from './directives/click-ouside';
 
 
 Vue.config.productionTip = false;
 Vue.use(VueRouter)
 Vue.use(Antd);
 Vue.use(VueQuillEditor)
+
+
+Vue.directive('click-outside', clickOuside)
 
 const router = new VueRouter({
   routes,
