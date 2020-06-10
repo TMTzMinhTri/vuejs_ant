@@ -25,8 +25,10 @@
         </div>
       </template>
       <template slot="action" slot-scope="text, record">
-        <a-popconfirm v-if="data.length" title="Sure to delete?" @confirm="() => onDelete(record)">
-          <a href="javascript:;">Delete</a>
+        <a-popconfirm v-if="data.length" title="Sure to delete?" @confirm="() => onDelete(record)" class="icon">
+          <a href="javascript:;">
+            <a-icon type="delete" />
+          </a>
         </a-popconfirm>
         <span v-if="record.editable">
           <a @click="() => save(record.key)">Save</a>
@@ -35,7 +37,9 @@
           </a-popconfirm>
         </span>
         <span v-else>
-          <a :disabled="editingKey !== ''" @click="() => setEdit(record.key)">Edit</a>
+          <a :disabled="editingKey !== ''" @click="() => setEdit(record.key)" class="icon">
+            <a-icon type="edit" />
+          </a>
         </span>
       </template>
     </a-table>
@@ -153,3 +157,8 @@ export default {
   }
 };
 </script>
+<style scoped>
+  .icon {
+    margin: 10px;
+  }
+</style>
