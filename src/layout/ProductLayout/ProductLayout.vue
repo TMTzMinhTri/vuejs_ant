@@ -18,7 +18,9 @@
       </a-menu>
     </a-layout-sider>
     <a-layout>
-      <a-layout-header style="background: #fff; padding: 0" />
+      <a-layout-header style="background: #fff; padding: 0">
+        <TopNavbar />
+      </a-layout-header>
       <a-layout-content style="margin: 0 16px">
         <a-breadcrumb style="margin: 16px 0">
           <a-breadcrumb-item>User</a-breadcrumb-item>
@@ -34,6 +36,8 @@
 </template>
 
 <script>
+import TopNavbar from "./TopNavbar";
+import Vue from "vue";
 const listProductMenu = [
   { name: "Nhóm thuốc", path: "/product/product-category", icon_type: "user" },
   {
@@ -70,7 +74,10 @@ const listProductMenu = [
   { name: "Importer", path: "/product/product-importer", icon_type: "user" }
 ];
 
-export default {
+export default Vue.extend({
+  components: {
+    TopNavbar
+  },
   data() {
     return {
       collapsed: false,
@@ -79,7 +86,7 @@ export default {
   },
 
   methods: {}
-};
+});
 </script>
 
 
